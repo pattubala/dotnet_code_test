@@ -22,8 +22,7 @@ jobs:
  
       - name: sed command
         run: |
-          token="${{ steps.secrets.outputs.token }}"
-          sed -i '5s/"uuid": ""/"uuid": "'"$token"'"/' sample sample1 sample2
+          sed -i '5s/"uuid": ""/"uuid": "'${{ steps.secrets.outputs.token }}'"/' sample sample1 sample2
           cat sample
           
       - name: print file
