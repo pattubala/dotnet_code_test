@@ -19,7 +19,7 @@ jobs:
           
       - name: Get var vaule
         id: variables
-        run: echo "::set-output name=vartoken::${{ variables.VARIABLE }}"
+        run: echo "::set-output name=vartoken::${{ var.VARIABLE }}"
         
       - name: Get secret value
         id: secrets
