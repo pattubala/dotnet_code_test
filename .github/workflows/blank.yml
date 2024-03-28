@@ -18,7 +18,7 @@ jobs:
           repository: pattubala/dotnet_code_test
       - name: Get secret value
         id: secrets
-        run: echo "::set-output name=token::${{ secrets.TOKEN }}"
+        run: echo "::set-output name=token::${{ secrets.SECRET }}"
  
       - name: sed command
         run: |
