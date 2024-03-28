@@ -18,7 +18,7 @@ jobs:
           repository: pattubala/dotnet_code_test
       - name: sed command
         run: |
-         sed -i '10s/.*/$SECRET/' sample sample1 sample2
+         sed -i '5s/.*/$SECRET/' sample sample1 sample2
       - name: print file
         run: cat sample
       
