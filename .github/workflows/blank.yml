@@ -15,7 +15,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          repository: dotnet_code_test
+          repository: pattubala/dotnet_code_test
       - name: sed command
         run: |
          sed -i '8s/.*/$SECRET/' sample sample1 sample2
