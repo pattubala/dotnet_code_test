@@ -16,9 +16,15 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: pattubala/dotnet_code_test
+      - name: Get secret value
+        id: secrets
+        run: echo "::set-output name=token::${{ secrets.TOKEN }}"
+ 
       - name: sed command
         run: |
-         sed -i '5s/.*/$SECRET/' sample sample1 sample2
+          token="${{ steps.secrets.outputs.token }}"
+          sed -i '5s/.*/$SECRET/' sample sample1 sample2
+          
       - name: print file
         run: cat sample
       
