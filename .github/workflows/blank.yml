@@ -3,9 +3,9 @@ env:
   DOTNET_VERSION: '7.0.x'
 on:
   workflow_dispatch:
-  pull_request:
+  push:
     branches:
-      - develop
+      - main
 
 jobs:
   test:
@@ -18,7 +18,7 @@ jobs:
           repository: pattubala/dotnet_code_test
       - name: sed command
         run: |
-         sed -i '8s/.*/$SECRET/' sample sample1 sample2
+         sed -i '10s/.*/$SECRET/' sample sample1 sample2
       - name: print file
         run: cat sample
       
